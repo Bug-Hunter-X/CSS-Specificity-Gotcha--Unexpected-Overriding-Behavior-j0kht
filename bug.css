@@ -1,0 +1,18 @@
+The following CSS code snippet might not work as expected due to an uncommon issue with specificity:
+
+```css
+.container {
+  width: 100%;
+}
+
+#container {
+  width: 50%;
+}
+
+#container.special {
+  width: 75%;
+}
+```
+
+While you might expect the `#container.special` selector to override the `#container` selector due to its increased specificity, this can behave unexpectedly depending on the order of the declarations in your stylesheet and how the CSS parser handles the cascade.  The ID selector is highly specific. The class selector with an id is also quite specific. The order can have unexpected behavior.
+
